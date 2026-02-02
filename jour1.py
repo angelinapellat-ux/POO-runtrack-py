@@ -4,4 +4,5 @@ class Operation:
         self.nombre2 = nombre2
 
 operation = Operation()
-print(operation)
+print("Nombre 1 est ", operation.nombre1)
+print("Nombre 2 est ", operation.nombre2)
