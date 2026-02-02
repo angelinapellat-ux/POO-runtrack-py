@@ -5,5 +5,5 @@ class Operation:
 
 operation = Operation()
 
-print("Nombre 1 :", operation.nombre1)
-print("Nombre 2 :", operation.nombre2)
+print("Nombre 1 est ", operation.nombre1)
+print("Nombre 2 est ", operation.nombre2)
