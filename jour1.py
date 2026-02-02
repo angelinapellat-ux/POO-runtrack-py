@@ -3,6 +3,10 @@ class Operation:
         self.nombre1 = nombre1
         self.nombre2 = nombre2
 
-operation = Operation()
-print("Nombre 1 est ", operation.nombre1)
-print("Nombre 2 est ", operation.nombre2)
+    def addition(selft):
+        resultat = selft.nombre1 + selft.nombre2
+        print("Le résultat est :", resultat)
+
+operation = Operation(12, 3)
+
+operation.addition()
