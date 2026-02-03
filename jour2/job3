@@ -1,0 +1,67 @@
+class Livre:
+    def __init__(self, titre, auteur, nb_pages):
+        self.__titre = titre
+        self.__auteur = auteur
+        self.__nb_pages = nb_pages
+        self.__disponible = True   
+
+    def getTitre(self):
+        return self.__titre
+
+    def getAuteur(self):
+        return self.__auteur
+
+    def getNbPages(self):
+        return self.__nb_pages
+
+    def getDisponible(self):
+        return self.__disponible
+
+    def setTitre(self, nouveau_titre):
+        self.__titre = nouveau_titre
+
+    def setAuteur(self, nouvel_auteur):
+        self.__auteur = nouvel_auteur
+
+    def setNbPages(self, nouveau_nb_pages):
+        if isinstance(nouveau_nb_pages, int) and nouveau_nb_pages > 0:
+            self.__nb_pages = nouveau_nb_pages
+        else:
+            print("Erreur : le nombre de pages doit être un entier positif.")
+
+    def verification(self):
+        """Retourne True si le livre est disponible, False sinon."""
+        return self.__disponible
+
+    def emprunter(self):
+        """Rend le livre indisponible si possible."""
+        if self.verification():  
+            self.__disponible = False
+            return True
+        else:
+            print("Impossible d'emprunter : le livre est déjà emprunté.")
+            return False
+
+    def rendre(self):
+        """Rend le livre disponible si celui-ci était emprunté."""
+        if not self.verification():  
+            self.__disponible = True
+            return True
+        else:
+            print("Impossible de rendre : le livre n'a pas été emprunté.")
+            return False
+
+livre = Livre("Dune", "Frank Herbert", 600)
+
+print("Disponible :", livre.verification())
+
+livre.emprunter()
+print("Disponible après emprunt :", livre.verification())
+
+livre.emprunter()
+
+livre.rendre()
+print("Disponible après retour :", livre.verification())
+
+livre.rendre()
+
